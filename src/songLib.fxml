@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">
+  <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Pane blendMode="SRC_ATOP" layoutX="8.0" layoutY="314.0" prefHeight="100.0" prefWidth="629.0" style="-fx-border-color: black;">
+               <children>
+                  <Text layoutX="63.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Song Name*" />
+                  <Text layoutX="253.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist*" />
+                  <Text layoutX="363.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
+                  <Text layoutX="435.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Album" />
+                  <Text fx:id="requiredFieldText" layoutX="548.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* fields required">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="cancelButtonEdit" disable="true" layoutX="528.0" layoutY="61.0" mnemonicParsing="false" onAction="#reset" prefHeight="31.0" prefWidth="73.0" text="Cancel" visible="false" />
+                  <Button fx:id="confirmButtonEdit" disable="true" layoutX="528.0" layoutY="25.0" mnemonicParsing="false" onAction="#doEdit" text="Confirm" visible="false" />
+                  <Button fx:id="cancelButtonDelete" disable="true" layoutX="528.0" layoutY="61.0" mnemonicParsing="false" onAction="#reset" prefHeight="31.0" prefWidth="73.0" text="Cancel" visible="false" />
+                  <Button fx:id="confirmButtonDelete" disable="true" layoutX="528.0" layoutY="25.0" mnemonicParsing="false" onAction="#doDelete" text="Confirm" visible="false" />
+                  <Text fx:id="confirmChangesText" layoutX="504.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Changes?" visible="false" />
+                   <Text fx:id="confirmDeleteText" layoutX="504.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Delete?" visible="false" />
+               </children></Pane>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <Button fx:id="addSongButton" layoutX="547.0" layoutY="355.0" mnemonicParsing="false" onAction="#addSong" text="Add Song" />
+            <TextField fx:id="songNameBox" layoutX="14.0" layoutY="355.0" prefHeight="31.0" prefWidth="201.0" promptText="Song Name*" />
+            <TextField fx:id="artistBox" layoutX="221.0" layoutY="355.0" prefHeight="31.0" prefWidth="133.0" promptText="Artist*" />
+            <TextField fx:id="yearBox" layoutX="359.0" layoutY="355.0" prefHeight="31.0" prefWidth="54.0" promptText="Year" />
+            <TextField fx:id="albumBox" layoutX="425.0" layoutY="355.0" prefHeight="31.0" prefWidth="94.0" promptText="Album" />
+            <Text layoutX="14.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" />
+            <Button fx:id="deleteButton" disable="true" layoutX="212.0" layoutY="319.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="100.0" text="Delete" />
+            <Button fx:id="editButton" disable="true" layoutX="363.0" layoutY="319.0" mnemonicParsing="false" onAction="#edit" prefHeight="31.0" prefWidth="100.0" text="Edit" />
+            <ListView fx:id="listViewContainer" layoutX="14.0" layoutY="14.0" onMouseClicked="#handleMouseClick" prefHeight="292.0" prefWidth="616.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
